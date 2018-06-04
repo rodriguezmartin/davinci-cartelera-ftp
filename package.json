@@ -1,0 +1,33 @@
+{
+  "name": "davinci",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "pubsub-js": "^1.6.0",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-download-notification": "github:rodriguezmartin/react-native-download-notification",
+    "react-native-file-opener": "^0.2.0",
+    "react-native-ftp": "github:rodriguezmartin/react-native-ftp",
+    "react-native-key-value-storage": "^2.1.0",
+    "react-native-path-breadcrumbs": "github:rodriguezmartin/react-native-path-breadcrumbs",
+    "react-native-scrollable-tab-view": "github:rodriguezmartin/react-native-scrollable-tab-view",
+    "react-native-secure-key-store": "^1.0.9",
+    "react-native-splash-screen": "^3.0.7",
+    "react-native-vector-icons": "^4.6.0",
+    "rn-sliding-up-panel": "github:rodriguezmartin/rn-sliding-up-panel"
+  },
+  "devDependencies": {
+    "babel-jest": "23.0.1",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "23.0.1",
+    "react-test-renderer": "16.3.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
