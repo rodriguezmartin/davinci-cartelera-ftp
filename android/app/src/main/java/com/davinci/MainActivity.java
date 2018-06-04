@@ -1,4 +1,4 @@
-package com.davinci;
+package ar.edu.davinci.cartelera;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;

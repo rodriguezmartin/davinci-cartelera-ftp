@@ -21,9 +21,9 @@ export default class CarteleraRow extends PureComponent{
             {filters.comision === 'Todo' ? <Text {...frstyle}>{catedra.comision}</Text> : null}
           </View>
           <Text style={{flex: 7}}>{data.item.nombre}</Text>
-          {data.estado === 'Cancelada' ?
+          {data.item.estado == 'Cancelada' ?
             <Icon style={[styles.tableRowIcon, styles.tableRowIconRed]} name="highlight-off"/> :
-              lugar.corto === '-' 
+              lugar.corto == '-' 
                 ? <Icon style={[styles.tableRowIcon, styles.tableRowIconYellow]} name="help-outline"/> 
                 : <Text style={{flex: 1, marginLeft: 10}}>{lugar.corto}</Text>
           }
