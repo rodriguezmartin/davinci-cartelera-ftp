@@ -37,20 +37,28 @@ export default class Cartelera extends PureComponent{
   }
 
   requestData = ()=>{
-    this.setState({refreshing: true});
-    getCartelera()
-      .then((data)=>{
-        this.setState({
-          tableData: data,
-          refreshing: false
+    this.setState((prev)=>{
+      return {
+        ...prev,
+        refreshing: true,
+        cantGetData: false
+      }
+    },()=>{
+      getCartelera()
+        .then((data)=>{
+          this.setState({
+            tableData: data,
+            refreshing: false
+          })
         })
-      })
-      .catch((err)=>{
-        this.setState({
-          cantGetData: true,
-          refreshing: false
+        .catch((err)=>{
+          this.setState({
+            tableData: [],
+            cantGetData: true,
+            refreshing: false
+          });
         });
-      });
+    });
   }
 
   handleRefresh = ()=>{
@@ -88,9 +96,8 @@ export default class Cartelera extends PureComponent{
           <ErrorCard
             image={<Image source={require('../../assets/failedfetch.png')}/>}
             title="Algo salió mal"
-            content="No hay conexión con el servidor"
-          >
-            <Button title="Reintentar" onPress={this.requestData} outline={true}/>
+            content="No hay conexión con el servidor">
+            <Button title="Reintentar" iconName="autorenew" onPress={this.handleRefresh} transparent={true}/>
           </ErrorCard>
         </View>
       )
